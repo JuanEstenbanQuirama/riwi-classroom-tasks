@@ -69,40 +69,40 @@ let isArray = ['Colombia0', 'Chile', 'EE.UU', 'Mauritania', 'Senegal']
 console.log(`19. usando el metodo .length, la longitud es de:`, isArray.length)
 
 // 20.
-let isObject = { serial: 12345, id:'02', objectName: "esTheBitan" }
+let isObject = { serial: 12345, id: '02', objectName: "esTheBitan" }
 console.log(`20. Mostrando priedad de un objeto:`, isObject.objectName)
 
 // 21. 
 let isNull = null
-console.log(`21. el valor null es un typo de dato:`, typeof(isNull))
+console.log(`21. el valor null es un typo de dato:`, typeof (isNull))
 
 // 22.
 let isUndefined;
-console.log(`22. el valor undefined es un typo de dato:`, typeof(isUndefined))
+console.log(`22. el valor undefined es un typo de dato:`, typeof (isUndefined))
 
 // 23. 
 let isNumberDecimal = 7.7
-console.log(`23. el valor 7.7 es un typo de dato:`, typeof(isNumberDecimal))
+console.log(`23. el valor 7.7 es un typo de dato:`, typeof (isNumberDecimal))
 
 // 24.
 let isNumberNegative = -7
-console.log(`24. el valor -7 es un typo de dato:`, typeof(isNumberDecimal))
+console.log(`24. el valor -7 es un typo de dato:`, typeof (isNumberDecimal))
 
 // 25. 
 let casa = "casa"
-console.log(`25. Usando el metodo .indexOf`,casa.indexOf("a"))
+console.log(`25. Usando el metodo .indexOf`, casa.indexOf("a"))
 
 // 26. 
 let arrayJavascript = "Javascript"
-console.log(`26. usando el metodo .includes: busando 'Script' en 'Javascript'`,arrayJavascript.includes("Script"))
+console.log(`26. usando el metodo .includes: busando 'Script' en 'Javascript'`, arrayJavascript.includes("Script"))
 
 // 27. 
 let hola = "Hola"
 let mundo = "Mundo"
-console.log(`27. Usando el metodo .contact para los string 'Hola', 'Mundo', es: `,hola.concat(mundo))
+console.log(`27. Usando el metodo .contact para los string 'Hola', 'Mundo', es: `, hola.concat(mundo))
 
 // 28. 
-console.log(`28. Usando el metodo '+' para los string 'Hola', 'Mundo', es: `,hola +  mundo)
+console.log(`28. Usando el metodo '+' para los string 'Hola', 'Mundo', es: `, hola + mundo)
 
 // 29. 
 console.log(`29. Usando template string para los string 'Hola', 'Mundo', es: ${hola} ${mundo}`)
@@ -120,7 +120,7 @@ let stringSlice = "programación"
 console.log(`32. Usando el metodo .slice: `, stringSlice.slice(8))
 
 // 33. 
-let stringSubstring= "JavaScript"
+let stringSubstring = "JavaScript"
 console.log(`33. usando el metodo substring en 'JavaScript':`, stringSubstring.substring(2))
 
 // 34.
@@ -140,7 +140,7 @@ console.log(`37. Usando el metodo .toLowerCase:`, stringToUpperCase.toLowerCase(
 
 // 38
 let stringNumber = 7
-console.log(`38. Usando el metodo typeOf:`,typeof(stringNumber))
+console.log(`38. Usando el metodo typeOf:`, typeof (stringNumber))
 
 // 39 
 let isABoolean = false;
@@ -152,21 +152,21 @@ console.log(`40. suando el metodo .length:`, arrayThings.length)
 
 // 41
 let objectThings = {
-  reloj:5,
-  taza:"una",
+  reloj: 5,
+  taza: "una",
   cargador: null,
-  llaves:3
+  llaves: 3
 }
 console.log(`41. usando '.' para acceder al valor de un objeto`, objectThings.taza)
 
 // 42
 let stringNull = null
-console.log(`42. el valor null es un typo de dato:`, typeof(stringNull))
+console.log(`42. el valor null es un typo de dato:`, typeof (stringNull))
 
 // 43
 let stringUndefined;
-console.log(`43. el valor undefined es un typo de dato:`, typeof(stringUndefined))
+console.log(`43. el valor undefined es un typo de dato:`, typeof (stringUndefined))
 
 // 44
-let stringNumberDecimal = 7.7
-console.log(`23. el valor 7.7 es un typo de dato:`, typeof(stringNumberDecimal))
+let stringNumberDecimal = 8.7
+console.log(`44. el valor 8.7 es un typo de dato:`, typeof (stringNumberDecimal))
