@@ -68,7 +68,6 @@ if (isNumberCero == 0) {
 
 // 11. 
 let numberRange = Math.floor(Math.random() * 41) - 20;
-
 if ((numberRange > -10) && (numberRange < 10)) {
     console.log(`${numberRange} Es mayor que -10`);
 } else {
@@ -91,10 +90,9 @@ if (age >= 18) {
     console.log(`La persona tiene ${age} años es menor de edad`);
 }
 
-// 15. revisar -----------------------------------------------
+// 15. verificar si un mumero es un cuadrado perfecto
 let numero = Math.floor(Math.random() * 100);
 let raizCuadrada = Math.sqrt(numero);
-
 if (raizCuadrada === Math.floor(raizCuadrada)) {
     console.log(`${numero} es un cuadrado perfecto`);
 } else {
@@ -102,53 +100,34 @@ if (raizCuadrada === Math.floor(raizCuadrada)) {
 }
 
 // 16 revisar -----------------------------------------
-let a = 0;
-let b = 1;
-let c = 0;
-
-let numeroEvaluar = 8
-
-while (c <= numeroEvaluar) {
-    c = a + b;
-    a = b;
-    b = c;
+let fibo = []
+fibo[0] = 0;
+fibo[1] = 1
+for (let i = 0; i < 5; i++) {
+    fibo[i] = fibo[i-2]+ fibo[i-1]
 }
+console.log(fibo)
 
-const numFibo = c - (c - a);
-
-if (numeroEvaluar == numFibo) {
-    console.log("El Número está en la serie Fibonacci");
-} else {
-    console.log("El Número no está en la serie Fibonacci");
-}
-
-// 17.-----reisar
+// 17.
 let isNumberRamdom = Math.floor(Math.random() * 100);
-
 if ((isNumberRamdom & (isNumberRamdom - 1)) === 0) {
     console.log(`Es potencia de dos. ${isNumberRamdom}`);
 } else {
     console.log(`No es potencia de dos. ${isNumberRamdom}`);
 }
 
-// 18. ------revisar
-// // Determina si un número es un palíndromo.
-
+// 18.
 // let numero = Math.floor(Math.random() *1000);
 // numero = numero.toString();
 // let palindromo = numero.split('').reverse().join('');//Seapara la cadena en una lista, la voltea al revés y la vuelve a convertir en cadena
-
 // if (numero === palindromo) {
 //     console.log(`${numero} es palíndromo`);
 // } else {
 //     console.log(`${numero} No es palíndromo`);
 // }
 
-
-
 // 19. 
 let stringText = "Voy a ser el mejor del mundo mundial en: JavaScript";
-
 if (stringText.includes("JavaScript")) {
     console.log(`Contiene la palabra JavaScript`);
 } else {
