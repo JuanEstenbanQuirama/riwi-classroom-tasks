@@ -9,16 +9,14 @@ resultado en consola. Además, utiliza algún método de string para indicar si 
 resultado es un número positivo o negativo.
  */
 
-// let number1 = Number(prompt("ingresa el numero1"))
-// let number2 = Number(prompt("ingresa el numero1"))
+let number1 = Number(prompt("ingresa el numero 1:"))
+let number2 = Number(prompt("ingresa el numero 2:"))
 
-let number1=3
-let number2=4
-if (number1>number2){
-    console.log(number1-number2)
-} if (number1<number2) {
-    console.log(`el numero${number1} no es mayor que ${number2}:`, number1-number2)
-}
+// if (number1>number2){
+//     console.log(`1. el numero: ${number1} es menor que ${number2}:`, number1-number2, "La resta es positivo")
+// } else {
+//     console.log(`1. el numero: ${number1} no es mayor que ${number2}:`, number1-number2, "La resta es negativo")
+// }
 
 /**
  2. switch case con uso de operadores de comparación, Método Math y 
@@ -38,8 +36,9 @@ calculadora
 3. multiplicacion.
 4. division.
 `)
+let op = Number(prompt("Elige la opcion"))
+let option = Number(op);
 
-let option = Number();
 
 switch (option) {
     case 1:
@@ -55,5 +54,6 @@ switch (option) {
         console.log(`la division es:`, number1/number2)
         break;
     default:
+        console.log("Elige una opción correcta")
         break;
 }
