@@ -139,7 +139,7 @@ console.log(preciosConIVA);
 
 // 23. Crea un array llamado duplicados que contenga algunos números duplicados.
 console.log("EJERCICIOS ARRAYS # -------23------")
-let dupli = [2, 3, 4, 2, 5, 6, 4, 3, 5, 7]
+let dupli = [2, 2, 4, 3, 5, 6, 4, 3, 5, 7]
 console.log(dupli)
 
 // 24. Elimina los elementos duplicados del array duplicados y muestra el nuevo array sin duplicados en la consola
@@ -151,4 +151,25 @@ for (let i = 0; i < dupli.length; i++) {
   }
 }
 console.log(noDupli)
+console.log("forma sin metodos");
+
+let numerosDuplicados = [2, 2, 4,3, 5, 6,3,4, 7];
+let sinDuplicados = [];
+
+
+for (let i = 0; i < numerosDuplicados.length; i++) {
+  let duplicado = false;
+  for (let j = 0; j < sinDuplicados.length; j++) {
+      if (numerosDuplicados[i] === sinDuplicados[j]) {
+          duplicado = true;
+          break;
+      }
+  }
+  if (!duplicado) {
+      sinDuplicados.push(numerosDuplicados[i]);
+  }
+}
+console.log(sinDuplicados)
+
+
 
