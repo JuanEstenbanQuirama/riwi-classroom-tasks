@@ -57,24 +57,8 @@ console.log(setMinute);
 
 
 
-
-
-
-
-
-
-
-
-
 // Ejercicio
 // Ingresar una fecha mediante un prompt y mostrar luego, mediante un alert, a qué día  la semana corresponde - pista pueden usar un switch
-
-
-
-
-
-
-
 
 
 
