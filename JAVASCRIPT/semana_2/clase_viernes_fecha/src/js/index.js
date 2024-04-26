@@ -50,7 +50,10 @@ const date = new Date(2018, 0, 30, 23, 30, 14, 0);
 
 console.log(date)
 
-
+let setDay = isDate.setDate(0)
+console.log(setDay);
+let setMinute = isDate.getTimezoneOffset()
+console.log(setMinute);
 
 
 
@@ -65,6 +68,9 @@ console.log(date)
 
 // Ejercicio
 // Ingresar una fecha mediante un prompt y mostrar luego, mediante un alert, a qué día  la semana corresponde - pista pueden usar un switch
+
+
+
 
 
 
