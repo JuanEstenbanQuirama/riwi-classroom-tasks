@@ -23,19 +23,19 @@ dueño, teléfono de contacto, correo del propietario,).
 let listPets = [
     {
         petName: "Doggy",
-        PetRace: "Zhit zu",
+        petRace: "Zhit zu",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 7,
         petStatus: "good",
-        petOwner: "juan",
+        petOwner: "Juan",
         petOwnerId: 1036670093,
         petOwnerPhone: 3059052091,
         petOwnerEmial: "jquirama@gmail.com"
     },
     {
         petName: "Thobbias",
-        PetRace: "Zhit zu",
+        petRace: "Zhit zu",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 3,
@@ -47,7 +47,7 @@ let listPets = [
     },
     {
         petName: "lulu",
-        PetRace: "doberman",
+        petRace: "doberman",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 7,
@@ -59,7 +59,7 @@ let listPets = [
     },
     {
         petName: "fiona",
-        PetRace: "persa",
+        petRace: "persa",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 7,
@@ -71,7 +71,7 @@ let listPets = [
     },
     {
         petName: "Simona",
-        PetRace: "labrador",
+        petRace: "labrador",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 10,
@@ -83,7 +83,7 @@ let listPets = [
     },
     {
         petName: "lukas",
-        PetRace: "mapache",
+        petRace: "mapache",
         petSpecies: "albino",
         petAge: new Date(),
         petWidth: 7,
@@ -95,7 +95,7 @@ let listPets = [
     },
     {
         petName: "ikaro",
-        PetRace: "pastor",
+        petRace: "pastor",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 7,
@@ -107,7 +107,7 @@ let listPets = [
     },
     {
         petName: "mono",
-        PetRace: "coker",
+        petRace: "coker",
         petSpecies: "Dog",
         petAge: new Date(),
         petWidth: 7,
@@ -118,16 +118,6 @@ let listPets = [
         petOwnerEmial: "jquirama@gmail.com"
     }
 ];
-
-
-
-
-
-// op = showMenu();
-// console.log(op);
-
-// let pet = {}
-// let newPet= {}
 
 console.log(listPets);
 function inputsData() {
@@ -145,12 +135,12 @@ function inputsData() {
 }
 function registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombrePropietario, documentoPropietario, telefonoPropietario, correoPropietario) {
     // Calcular la edad
-    // let age = calcularEdad(fechaNacimiento);
+    let age = calculateAge(fechaNacimiento);
     pet = {
         petName: nombre,
-        PetRace: raza,
+        petRace: raza,
         petSpecies: especie,
-        petAge: fechaNacimiento,
+        petAge: age,
         petWidth: peso,
         petStatus: estado,
         petOwner: nombrePropietario,
@@ -159,15 +149,14 @@ function registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombr
         petOwnerEmial: correoPropietario
     }
     listPets.push(pet);
+    console.log("agregando mascota");
     return pet
 }
 
 // showMenu()
 // inputsData() // funciona melo  se hace una llamada asincrona para registrar el pet
-console.log(listPets);
 
 let op = 0;
-
 function showMenu() {
     return Number(prompt(`BITAN VET
     Digita una opción:
@@ -181,17 +170,69 @@ function showMenu() {
     `));
 }
 
-op = showMenu()
+op = showMenu() // "activo la funcion"
+
+// Función para calcular la edad
+
+function calculateAge(fechaNacimiento) {
+    // Cálculo de la edad (ejemplo básico)
+    // Aquí deberías implementar un cálculo más preciso
+    let currentDay = new Date();
+    let birthDate = new Date(fechaNacimiento);
+    let edad = currentDay.getFullYear() - birthDate.getFullYear();
+    return edad;
+}
+
+// Función para ver la lista de todas las mascotas registradas
+function getPets() {
+    console.log("Lista de mascotas:");
+    listPets.forEach(eachPet => {
+        console.log(eachPet.petName, eachPet.petRace, eachPet.petSpecies);
+    });
+}
+
+// // Función para ver una lista de todos los dueños
+function petOwner() {
+    console.log("Lista de dueños:");
+    let dueños = [];
+    listPets.forEach(pet => {
+        if (!dueños.includes(pet.petOwner)) {
+            dueños.push(pet.petOwner);
+        }
+    });
+    console.log(dueños);
+}
+
+
+function getPetByName(sarchName) {
+    let mascotaEncontrada = listPets.find(pet => pet.petName === sarchName);
+    if (mascotaEncontrada) {
+        console.log("Mascota encontrada:");
+        console.log(mascotaEncontrada);
+    } else {
+        console.log("Mascota no encontrada.");
+    }
+}
 
 switch (op) {
     case 1:
         inputsData()
-        console.log("xd");
         break;
     case 2:
-        console.log("2");
+        getPets()
         break;
-2
+    case 3:
+        petOwner()
+        break;
+    case 4:
+        let isNamePet = prompt("ingresa el nombre del pet")
+        getPetByName(isNamePet)
+        break;
+    case 5:
+        let isNameOnwer = prompt("ingresa el nombre del propietario")
+
+        getPetByOwner(isNameOnwer)
+        break;
     default:
         console.log("nel");
         break;
@@ -199,71 +240,32 @@ switch (op) {
 
 console.log(listPets);
 
-// console.log();
-// // Función para calcular la edad
-// function calcularEdad(fechaNacimiento) {
-//     // Cálculo de la edad (ejemplo básico)
-//     // Aquí deberías implementar un cálculo más preciso
-//     let fechaActual = new Date();
-//     let fechaNac = new Date(fechaNacimiento);
-//     let edad = fechaActual.getFullYear() - fechaNac.getFullYear();
-//     return edad;
-// }
 
-// // Función para ver la lista de todas las mascotas registradas
-// function verMascotas() {
-//     console.log("Lista de mascotas:");
-//     mascotas.forEach(mascota => {
-//         console.log(mascota);
-//     });
-// }
 
-// // Función para ver una lista de todos los dueños
-// function verDuenos() {
-//     console.log("Lista de dueños:");
-//     let dueños = [];
-//     mascotas.forEach(mascota => {
-//         if (!dueños.includes(mascota.nombrePropietario)) {
-//             dueños.push(mascota.nombrePropietario);
-//         }
-//     });
-//     console.log(dueños);
-// }
-
-// // Función para buscar una mascota por el nombre
-// function buscarMascotaPorNombre(nombre) {
-//     let mascotaEncontrada = mascotas.find(mascota => mascota.nombre === nombre);
-//     if (mascotaEncontrada) {
-//         console.log("Mascota encontrada:");
-//         console.log(mascotaEncontrada);
-//     } else {
-//         console.log("Mascota no encontrada.");
-//     }
-// }
 
 // // Función para filtrar y mostrar todas las mascotas pertenecientes a un mismo dueño
-// function mostrarMascotasPorDueño(nombrePropietario) {
-//     let mascotasPorDueño = mascotas.filter(mascota => mascota.nombrePropietario === nombrePropietario);
-//     if (mascotasPorDueño.length > 0) {
-//         console.log(`Mascotas de ${nombrePropietario}:`);
-//         mascotasPorDueño.forEach(mascota => {
-//             console.log(mascota);
-//         });
-//     } else {
-//         console.log(`No hay mascotas registradas para ${nombrePropietario}.`);
-//     }
-// }
+function getPetByOwner(searchByOwner) {
+    let mascotasPorDueño = listPets.filter(pet => pet.petOwner === searchByOwner);
+    if (mascotasPorDueño.length > 0) {
+        console.log(`Mascotas de ${searchByOwner}:`);
+        mascotasPorDueño.forEach(pet => {
+            console.log(pet);
+        });
+    } else {
+        console.log(`No hay mascotas registradas para ${searchByOwner}.`);
+    }
+}
 
 // // Función para actualizar la información de una mascota existente
-// function actualizarMascota(nombre, nuevaInfo) {
-//     let index = mascotas.findIndex(mascota => mascota.nombre === nombre);
-//     if (index !== -1) {
-//         mascotas[index] = { ...mascotas[index], ...nuevaInfo };
-//         console.log("Mascota actualizada correctamente.");
-//     } else {
-//         console.log("No se encontró ninguna mascota con ese nombre.");
-//     }
-// }
+function actualizarMascota(nombre, nuevaInfo) {
+    let index = mascotas.findIndex(mascota => mascota.nombre === nombre);
+    if (index !== -1) {
+        mascotas[index] = { ...mascotas[index], ...nuevaInfo };
+        console.log("Mascota actualizada correctamente.");
+    } else {
+        console.log("No se encontró ninguna mascota con ese nombre.");
+    }
+}
 
 // // Función para eliminar una mascota del array
 // function eliminarMascota(nombre) {
