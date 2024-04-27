@@ -120,6 +120,7 @@ let listPets = [
 ];
 
 console.log(listPets);
+
 function inputsData() {
     let nombre = prompt("Ingrea el nombre de la mascota")
     let especie = prompt("Ingrea la espcie de la mascota")
@@ -133,7 +134,9 @@ function inputsData() {
     let correoPropietario = prompt("Ingrea el correo dueño de la mascota")
     registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombrePropietario, documentoPropietario, telefonoPropietario, correoPropietario)
 }
+
 function registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombrePropietario, documentoPropietario, telefonoPropietario, correoPropietario) {
+
     // Calcular la edad
     let age = calculateAge(fechaNacimiento);
     pet = {
@@ -153,27 +156,7 @@ function registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombr
     return pet
 }
 
-// showMenu()
-// inputsData() // funciona melo  se hace una llamada asincrona para registrar el pet
-
-let op = 0;
-function showMenu() {
-    return Number(prompt(`BITAN VET
-    Digita una opción:
-    1. Registrar una nueva mascota
-    2. Ver la lista de las mascotas registradas
-    3. Ver una lista de todos los dueños
-    4. Buscar una mascota por el nombre
-    5. Filtrar las mascotas pertenecientes a un mismo dueño
-    6. Actualizar la información de una mascota existente
-    7. Eliminar una mascota del array
-    `));
-}
-
-op = showMenu() // "activo la funcion"
-
 // Función para calcular la edad
-
 function calculateAge(fechaNacimiento) {
     // Cálculo de la edad (ejemplo básico)
     // Aquí deberías implementar un cálculo más preciso
@@ -191,7 +174,7 @@ function getPets() {
     });
 }
 
-// // Función para ver una lista de todos los dueños
+// Función para ver una lista de todos los dueños
 function petOwner() {
     console.log("Lista de dueños:");
     let dueños = [];
@@ -203,7 +186,7 @@ function petOwner() {
     console.log(dueños);
 }
 
-
+// funcion para obtener la marcota por nomnbre
 function getPetByName(sarchName) {
     let mascotaEncontrada = listPets.find(pet => pet.petName === sarchName);
     if (mascotaEncontrada) {
@@ -214,41 +197,12 @@ function getPetByName(sarchName) {
     }
 }
 
-switch (op) {
-    case 1:
-        inputsData()
-        break;
-    case 2:
-        getPets()
-        break;
-    case 3:
-        petOwner()
-        break;
-    case 4:
-        let isNamePet = prompt("ingresa el nombre del pet")
-        getPetByName(isNamePet)
-        break;
-    case 5:
-        let isNameOnwer = prompt("ingresa el nombre del propietario")
-
-        getPetByOwner(isNameOnwer)
-        break;
-    default:
-        console.log("nel");
-        break;
-}
-
-console.log(listPets);
-
-
-
-
-// // Función para filtrar y mostrar todas las mascotas pertenecientes a un mismo dueño
+// Función para filtrar y mostrar todas las mascotas pertenecientes a un mismo dueño
 function getPetByOwner(searchByOwner) {
-    let mascotasPorDueño = listPets.filter(pet => pet.petOwner === searchByOwner);
-    if (mascotasPorDueño.length > 0) {
+    let petByOwner = listPets.filter(pet => pet.petOwner === searchByOwner);
+    if (petByOwner.length > 0) {
         console.log(`Mascotas de ${searchByOwner}:`);
-        mascotasPorDueño.forEach(pet => {
+        petByOwner.forEach(pet => {
             console.log(pet);
         });
     } else {
@@ -256,35 +210,90 @@ function getPetByOwner(searchByOwner) {
     }
 }
 
-// // Función para actualizar la información de una mascota existente
-function actualizarMascota(nombre, nuevaInfo) {
-    let index = mascotas.findIndex(mascota => mascota.nombre === nombre);
+// Función para actualizar la información de una mascota existente
+function uptadeInfoPet(namePet, nuevaInfo) {
+    let index = listPets.findIndex(pet => pet.petName === namePet);
     if (index !== -1) {
-        mascotas[index] = { ...mascotas[index], ...nuevaInfo };
+        listPets[index] = { ...listPets[index], ...nuevaInfo };
         console.log("Mascota actualizada correctamente.");
     } else {
         console.log("No se encontró ninguna mascota con ese nombre.");
     }
+    console.log(index);
 }
 
-// // Función para eliminar una mascota del array
-// function eliminarMascota(nombre) {
-//     mascotas = mascotas.filter(mascota => mascota.nombre !== nombre);
-//     console.log("Mascota eliminada correctamente.");
-// }
+// Función para eliminar una mascota del array
+function deletePet(petNameDelete) {
+    listPets = listPets.filter(pet => pet.petName !== petNameDelete);
+    console.log(`Mascota: ${petNameDelete} eliminada correctamente`);
+}
+
+let op = 0;
+function showMenu() {
+    return Number(prompt(`BITAN VET
+    Digita una opción:
+    1. Registrar una nueva mascota
+    2. Ver la lista de las mascotas registradas
+    3. Ver una lista de todos los dueños
+    4. Buscar una mascota por el nombre
+    5. Filtrar las mascotas pertenecientes a un mismo dueño
+    6. Actualizar la información de una mascota existente
+    7. Eliminar una mascota del array
+    8. Salir
+    `));
+}
+
+while (op != 8) {
+    op = showMenu()// "activo la funcion"
+    switch (op) {
+        case 1: 6
+
+            inputsData()
+            break;
+        case 2:
+            getPets()
+            break;
+        case 3:
+            petOwner()
+            break;
+        case 4:
+            let isNamePet = prompt("ingresa el nombre del pet")
+            getPetByName(isNamePet)
+            break;
+        case 5:
+            let isNameOnwer = prompt("ingresa el nombre del propietario")
+
+            getPetByOwner(isNameOnwer)
+            break;
+        case 6:
+            let namePet = prompt("ingresa el nombre de la mascora a actualizar")
+            let infoUpdate = prompt("Ingresa la información a actualizar (campo1:valor1-campo2:valor2-...)")
+            let nuevaInfo = {};
+            // Dividir la información por guiones y asignarla al objeto nuevaInfo
+            infoUpdate.split("-").forEach(item => {
+                let [campo, valor] = item.split(":");
+                nuevaInfo[campo.trim()] = valor.trim();
+            });
+            uptadeInfoPet(namePet, nuevaInfo)
+            break
+        case 7:
+            let petDelete = prompt("ingresa el nombre de la mascora a eliminar")
+            deletePet(petDelete)
+            break
+        case 8:
+            console.log("chaito pirobito");
+            break
+        default:
+            console.log("Selecciona una opción correcta");
+            break;
+    }
+}
+console.log(listPets);
 
 
 
-// // Ejemplo de uso
-// registerPet("Firulais", "Perro", "Labrador", "2015-05-10", 15, "Estable", "Juan Pérez", "12345678", "123456789", "juan@example.com");
-// registerPet("Minino", "Gato", "Siamés", "2018-10-20", 5, "Crítico", "María López", "87654321", "987654321", "maria@example.com");
 
-// verMascotas();
-// verDuenos();
-// buscarMascotaPorNombre("Firulais");
-// mostrarMascotasPorDueño("Juan Pérez");
-// actualizarMascota("Firulais", { peso: 16 });
-// eliminarMascota("Minino");
-// verMascotas();
-// showMenu();
+
+
+
 
