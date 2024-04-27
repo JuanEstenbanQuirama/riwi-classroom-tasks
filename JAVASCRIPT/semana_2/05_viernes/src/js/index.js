@@ -19,281 +19,228 @@ dueño, teléfono de contacto, correo del propietario,).
 8. Crear un menú que me permita controlar cada una de estas acciones 
 */
 
-// arreglo para almacenar las pascotas
 let listPets = [
-    {
-        petName: "Doggy",
-        petRace: "Zhit zu",
-        petSpecies: "Dog",
-        petAge: new Date(),
-        petWidth: 7,
-        petStatus: "good",
-        petOwner: "Juan",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
-    },
-    {
-        petName: "Thobbias",
-        petRace: "Zhit zu",
-        petSpecies: "Dog",
-        petAge: new Date(),
-        petWidth: 3,
-        petStatus: "good",
-        petOwner: "Juan",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
-    },
     {
         petName: "lulu",
         petRace: "doberman",
-        petSpecies: "Dog",
-        petAge: new Date(),
+        petSpecies: "dog",
+        petAge: new Date("12/19/2020"),
         petWidth: 7,
-        petStatus: "good",
-        petOwner: "Luisa",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
+        petStatus: "stable",
+        petOwner: "Sebas",
+        petOwnerId: 1036670094,
+        petOwnerPohone: 3059052091,
+        petOwnerEmial: "sebas@gmail.com"
     },
     {
-        petName: "fiona",
+        petName: "mantis",
         petRace: "persa",
-        petSpecies: "Dog",
-        petAge: new Date(),
+        petSpecies: "cat",
+        petAge: new Date("12/19/2020"),
         petWidth: 7,
-        petStatus: "good",
-        petOwner: "Crhistian",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
+        petStatus: "stable",
+        petOwner: "Sebas",
+        petOwnerId: 1036670094,
+        petOwnerPohone: 3059052091,
+        petOwnerEmial: "sebas@gmail.com"
     },
     {
-        petName: "Simona",
-        petRace: "labrador",
-        petSpecies: "Dog",
-        petAge: new Date(),
-        petWidth: 10,
-        petStatus: "critial",
-        petOwner: "Paola",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
-    },
-    {
-        petName: "lukas",
-        petRace: "mapache",
-        petSpecies: "albino",
-        petAge: new Date(),
+        petName: "goddy",
+        petRace: "zhit zu",
+        petSpecies: "dog",
+        petAge: new Date("12/19/2020"),
         petWidth: 7,
-        petStatus: "good",
-        petOwner: "Manuel",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
+        petStatus: "stable",
+        petOwner: "juli",
+        petOwnerId: 1036670094,
+        petOwnerPohone: 3059052091,
+        petOwnerEmial: "sebas@gmail.com"
     },
     {
         petName: "ikaro",
-        petRace: "pastor",
-        petSpecies: "Dog",
-        petAge: new Date(),
+        petRace: "partor",
+        petSpecies: "dog",
+        petAge: new Date("10/19/2020"),
         petWidth: 7,
-        petStatus: "good",
-        petOwner: "Ian",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
-    },
-    {
-        petName: "mono",
-        petRace: "coker",
-        petSpecies: "Dog",
-        petAge: new Date(),
-        petWidth: 7,
-        petStatus: "good",
-        petOwner: "Felipe",
-        petOwnerId: 1036670093,
-        petOwnerPhone: 3059052091,
-        petOwnerEmial: "jquirama@gmail.com"
+        petStatus: "stable",
+        petOwner: "nicolas",
+        petOwnerId: 1036670094,
+        petOwnerPohone: 3059052091,
+        petOwnerEmial: "sebas@gmail.com"
     }
-];
-
+]
 console.log(listPets);
 
+// recolectar info
 function inputsData() {
-    let nombre = prompt("Ingrea el nombre de la mascota")
-    let especie = prompt("Ingrea la espcie de la mascota")
-    let raza = prompt("Ingrea la raza de la mascota")
-    let fechaNacimiento = prompt("Ingrea la fecha de la mascota")
-    let peso = prompt("Ingrea el peso de la mascota")
-    let estado = prompt("Ingrea estado de la mascota")
-    let nombrePropietario = prompt("Ingrea el dueño de la mascota")
-    let documentoPropietario = prompt("Ingrea id dueño de la mascota")
-    let telefonoPropietario = prompt("Ingrea tell dueño de la mascota")
-    let correoPropietario = prompt("Ingrea el correo dueño de la mascota")
-    registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombrePropietario, documentoPropietario, telefonoPropietario, correoPropietario)
+    let namePet = prompt("ingresa nombre mascota")
+    let speciePet = prompt("ingresa especie mascota")
+    let racePet = prompt("ingresa raza mascota")
+    let birthPet = prompt("ingresa fecha mascota mm/dd/yyy")
+    let widthPet = prompt("ingresa peso mascota")
+    let statusPet = prompt("ingresa stado mascota")
+    let ownerPet = prompt("ingresa nombre propietario mascota")
+    let ownerPetId = prompt("ingresa id propietario mascota")
+    let ownerPetPhone = prompt("ingresa phone propietario mascota")
+    let ownerPetEmail = prompt("ingresa email propietario mascota")
+    // calcular edad 
+    registerPet(namePet, speciePet, racePet, birthPet, widthPet, statusPet, ownerPet, ownerPetId, ownerPetPhone, ownerPetEmail)
 }
 
-function registerPet(nombre, especie, raza, fechaNacimiento, peso, estado, nombrePropietario, documentoPropietario, telefonoPropietario, correoPropietario) {
-
-    // Calcular la edad
-    let age = calculateAge(fechaNacimiento);
+// añadir nueva mascota
+function registerPet(namePet, speciePet, racePet, birthPet, widthPet, statusPet, ownerPet, ownerPetId, ownerPetPhone, ownerPetEmail) {
+    // calcular la edad 
+    let isAge = calculateAge(birthPet)
+    // creando nueva mascota 
     pet = {
-        petName: nombre,
-        petRace: raza,
-        petSpecies: especie,
-        petAge: age,
-        petWidth: peso,
-        petStatus: estado,
-        petOwner: nombrePropietario,
-        petOwnerId: documentoPropietario,
-        petOwnerPhone: telefonoPropietario,
-        petOwnerEmial: correoPropietario
+        petName: namePet,
+        petRace: racePet,
+        petSpecies: speciePet,
+        petAge: isAge,
+        petWidth: widthPet,
+        petStatus: statusPet,
+        petOwner: ownerPet,
+        petOwnerId: ownerPetId,
+        petOwnerPohone: ownerPetPhone,
+        petOwnerEmial: ownerPetEmail
     }
-    listPets.push(pet);
-    console.log("agregando mascota");
+    listPets.push(pet) // añadiendo mascota al arreglo (ultima posición)
+    console.log("Agregando mascota");
+    console.log(pet)
     return pet
 }
 
-// Función para calcular la edad
-function calculateAge(fechaNacimiento) {
-    // Cálculo de la edad (ejemplo básico)
-    // Aquí deberías implementar un cálculo más preciso
-    let currentDay = new Date();
-    let birthDate = new Date(fechaNacimiento);
-    let edad = currentDay.getFullYear() - birthDate.getFullYear();
-    return edad;
+// calcular edad 
+function calculateAge(birthPet) {
+    // fuecha actual y la fecha indicada
+    let currentDay = new Date() // fecha actual completa 3423452345356262 2024
+    let ageBirth = new Date(birthPet) // fecha completa de la fecha dada 34345 1995
+    let age = currentDay.getFullYear() - ageBirth.getFullYear()
+    return age;
 }
 
-// Función para ver la lista de todas las mascotas registradas
+// ver lista mascotas
 function getPets() {
-    console.log("Lista de mascotas:");
+    console.log("Lista mascotas");
     listPets.forEach(eachPet => {
-        console.log(eachPet.petName, eachPet.petRace, eachPet.petSpecies);
-    });
+        console.log(eachPet.petName, eachPet.petRace, eachPet.petSpecies)
+    })
 }
 
-// Función para ver una lista de todos los dueños
-function petOwner() {
-    console.log("Lista de dueños:");
-    let dueños = [];
-    listPets.forEach(pet => {
-        if (!dueños.includes(pet.petOwner)) {
-            dueños.push(pet.petOwner);
+// ver lista propietarios
+function getPetsOwner() {
+    console.log("Lista de dueños");
+    let owners = []
+    listPets.forEach(eachPet => {
+        if (!owners.includes(eachPet.petOwner)) { // booleanos  true / false
+            owners.push(eachPet.petOwner)
         }
-    });
-    console.log(dueños);
+    })
+    console.log(owners);
 }
 
-// funcion para obtener la marcota por nomnbre
-function getPetByName(sarchName) {
-    let mascotaEncontrada = listPets.find(pet => pet.petName === sarchName);
-    if (mascotaEncontrada) {
-        console.log("Mascota encontrada:");
-        console.log(mascotaEncontrada);
+// ver mascota por nombre de la mascota
+function getPetByName(namePet) {
+    let petFind = listPets.find(pet => pet.petName === namePet)
+    if (petFind) {
+        console.log("Mascota encontrada");
+        console.log(petFind);
     } else {
-        console.log("Mascota no encontrada.");
+        console.log("Mascota no encontrada");
     }
 }
 
-// Función para filtrar y mostrar todas las mascotas pertenecientes a un mismo dueño
-function getPetByOwner(searchByOwner) {
-    let petByOwner = listPets.filter(pet => pet.petOwner === searchByOwner);
-    if (petByOwner.length > 0) {
-        console.log(`Mascotas de ${searchByOwner}:`);
-        petByOwner.forEach(pet => {
-            console.log(pet);
-        });
+// mostrar mascotas por nombre del propietario
+function getPetsByOwner(owner) {
+    let petByOwer = listPets.filter(pet => pet.petOwner === owner) // 2 pets de sebas
+    console.log(petByOwer);
+    if (petByOwer.length > 0) {
+        console.log(`Mascotas de ${owner}`);
+        petByOwer.forEach(eachPet => {
+            console.log(eachPet.petName, eachPet.petOwner);
+        })
     } else {
-        console.log(`No hay mascotas registradas para ${searchByOwner}.`);
+        console.log(`Mascotas no encontradas para ${owner}`);
+    }
+} 
+
+// Actualizar info pet
+function updateInfoPet(namePet, newInfoToUpdate) {
+    let index = listPets.findIndex(pet => pet.petName === namePet)
+    if (index !== -1) {    // lista de animal, en el index sería la ubicacíon de ese objeto, ... simplemente si no existe la clave se crea y si existe se sobre escribe o actualiza 
+        listPets[index] = { ...listPets[index], ...newInfoToUpdate } // esta info como se optiene 
+        console.log(`la mascota ${namePet} fur actualizada`);
+    } else {
+        console.log(`no se encontró ninguna mascota con el nombre ${namePet}`);
     }
 }
 
-// Función para actualizar la información de una mascota existente
-function uptadeInfoPet(namePet, nuevaInfo) {
-    let index = listPets.findIndex(pet => pet.petName === namePet);
-    if (index !== -1) {
-        listPets[index] = { ...listPets[index], ...nuevaInfo };
-        console.log("Mascota actualizada correctamente.");
-    } else {
-        console.log("No se encontró ninguna mascota con ese nombre.");
-    }
-    console.log(index);
+// eliminar un pet
+function deletePet(petNameToDelete) {
+    listPets = listPets.filter(pet => pet.petName !== petNameToDelete)
+    console.log(`mascota ${petNameToDelete} eliminada correctamente`);
 }
 
-// Función para eliminar una mascota del array
-function deletePet(petNameDelete) {
-    listPets = listPets.filter(pet => pet.petName !== petNameDelete);
-    console.log(`Mascota: ${petNameDelete} eliminada correctamente`);
-}
-
+// menu
 let op = 0;
 function showMenu() {
-    return Number(prompt(`BITAN VET
-    Digita una opción:
-    1. Registrar una nueva mascota
-    2. Ver la lista de las mascotas registradas
-    3. Ver una lista de todos los dueños
-    4. Buscar una mascota por el nombre
-    5. Filtrar las mascotas pertenecientes a un mismo dueño
-    6. Actualizar la información de una mascota existente
-    7. Eliminar una mascota del array
-    8. Salir
-    `));
+    return Number(prompt(`
+        Menu veterinaria
+        1. registro pet
+        2. ver todos los pets
+        3. ver lista dueños
+        4. buscar por nombre del pet
+        5. filtrar la mascota por el dueño
+        6. actualizar la info del pet
+        7. elimar el pet
+        8. salir del menu
+    `))
 }
 
-while (op != 8) {
-    op = showMenu()// "activo la funcion"
+while (op != 8) { // true o un false // mientras se cumple siga ejecutando
+    op = showMenu()
     switch (op) {
-        case 1: 6
-
+        case 1:
+            //crear
             inputsData()
             break;
         case 2:
             getPets()
             break;
         case 3:
-            petOwner()
+            getPetsOwner()
             break;
         case 4:
-            let isNamePet = prompt("ingresa el nombre del pet")
+            let isNamePet = prompt("Ingresa el nombre del pet")
             getPetByName(isNamePet)
             break;
         case 5:
-            let isNameOnwer = prompt("ingresa el nombre del propietario")
-
-            getPetByOwner(isNameOnwer)
+            let isNameOwnerPet = prompt("Ingresa el nombre del pet Owner")
+            getPetsByOwner(isNameOwnerPet)
             break;
         case 6:
-            let namePet = prompt("ingresa el nombre de la mascora a actualizar")
-            let infoUpdate = prompt("Ingresa la información a actualizar (campo1:valor1-campo2:valor2-...)")
-            let nuevaInfo = {};
-            // Dividir la información por guiones y asignarla al objeto nuevaInfo
-            infoUpdate.split("-").forEach(item => {
-                let [campo, valor] = item.split(":");
-                nuevaInfo[campo.trim()] = valor.trim();
-            });
-            uptadeInfoPet(namePet, nuevaInfo)
-            break
+            // updateInfoPet("mantis", {petWidthh: 16})
+            let namePet = prompt("Ingresa el nombre del pet")
+            let infoUpdate = prompt("ingresa los campos a actualizar (petWidth:5-campo2:valor2-....")
+            let newInfo = {}
+            // dividir la info por guiones
+            infoUpdate.split("-").forEach(item => { // petWidth:5 /campo2:valor2
+                let [campo, valor] = item.split(":") //petWidth / 5
+                newInfo[campo.trim()] = valor.trim() // object = {petWidth: 5}
+            })
+            updateInfoPet(namePet, newInfo)
+            break;
         case 7:
-            let petDelete = prompt("ingresa el nombre de la mascora a eliminar")
-            deletePet(petDelete)
-            break
+            let isNameToDelete = prompt("Ingresa la mascota")
+            deletePet(isNameToDelete)
+            break;
         case 8:
-            console.log("chaito pirobito");
-            break
+            console.log("Adios");
+            break;
         default:
-            console.log("Selecciona una opción correcta");
+            console.log("seleccione la opción correcta");
             break;
     }
 }
+
 console.log(listPets);
-
-
-
-
-
-
-
-
