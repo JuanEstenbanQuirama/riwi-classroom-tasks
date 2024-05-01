@@ -41,42 +41,22 @@ let listPets = [
     }
 ]
 
-const main = document.querySelector('main')
-console.log(main);
+const section = document.querySelector('section')
+console.log(section);
 for (let i = 0; i < listPets.length; i++) {
-   main.innerHTML += (`
-   <div class="row">
-    <div class="col">
-   <div class="card" style="width: 18rem">
-   <img
-     src=${listPets[i].petImg}
-     class="card-img-top"
-     alt="ramdom"
-     title="ramdom"
-     class="ramdom"
-   />
-   <div class="card-body">
-     <h2 class="card-title">${listPets[i].petName}</h2>
-     <p class="card-text">${listPets[i].petRace}</p>
-     <p class="card-text">${listPets[i].petSpecies}</p>
-     <a href="#" class="btn btn-primary">see details</a>
-   </div>
- </div>`
-)
+  section.innerHTML += `
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="${listPets[i].petImg}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+ `
+
 }
 
 
-// dos formas de hacer lo mismo 
-// const main = document.getElementsByTagName('main')
-// main[0].appendChild(ramdomImg) 
-// const main = document.querySelector('main')
-// let ramdomImg = document.createElement('img')
-
-// ramdomImg.id = "ramdom"
-// ramdomImg.src = "https://picsum.photos/201"
-// ramdomImg.alt = "ramdom imagen"
-// ramdomImg.width = 100
-// ramdomImg.removeAttribute('id')
-
-// ramdomImg.setAttribute("src", "https://picsum.photos/200") // tambien se peude ramdimgImg.src = "nuevo url"
-// main.appendChild(ramdomImg)
