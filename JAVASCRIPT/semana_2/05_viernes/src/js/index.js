@@ -24,7 +24,7 @@ let listPets = [
         petName: "lulu",
         petRace: "doberman",
         petSpecies: "dog",
-        petAge: new Date("12/19/2020"),
+        petAge: new Date("12/19/2020"), 
         petWidth: 7,
         petStatus: "stable",
         petOwner: "Sebas",

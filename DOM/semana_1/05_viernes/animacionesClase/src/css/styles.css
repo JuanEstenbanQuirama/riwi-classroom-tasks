@@ -4,14 +4,24 @@
     padding: 0;
 }
 /* Hay dos formas de animar en css
-    1- con la propiedad transition 
-    2- con la propiedad animation: (la cual veremos hoy) permiten animar el cambio de estado de un elemento a otro
+    1- con la propiedad transition -disparador, que son los pseudo elementos :hover :active / 
+        -las transiciones son un tipo de animación básica
+        -el usuario tiene que intervenir, accionar con el mause
+    2- con la propiedad animation:  permiten animar el cambio de estado de un elemento a otro
         - no necesita un disparador para que se ejecute
         - se pueden animar dinstintos estilos a la vez
         - se puede controlar todo el flujo de la animación desde que inicia hasta que termina
 */
 
+/* transition
+    -se usa la propiedas transition; propiedad css que voy a cambiar el tiemoo y linear
+    item {
+        background: blue
+    transition: background 02 linear
 
+    item:hover {
+        background: red
+*/
 .circle {
     margin-top: 30px;
     margin-left: 20px;
@@ -44,7 +54,7 @@
 }
 /* Para que una animación funcione tenemor que referencias un keyframe */
 
-@keyframes changeColorall { /*tomando todo el contro de la animación*/
+@keyframes changeColorall { /*tomando todo el control de la animación ps del 0 al 100*/
     0%{ 
         transform: scale(1);
     }
