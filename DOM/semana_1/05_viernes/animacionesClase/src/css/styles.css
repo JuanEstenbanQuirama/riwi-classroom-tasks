@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Hay dos formas de animar en css
+    1- con la propiedad transition 
+    2- con la propiedad animation: (la cual veremos hoy) permiten animar el cambio de estado de un elemento a otro
+        - no necesita un disparador para que se ejecute
+        - se pueden animar dinstintos estilos a la vez
+        - se puede controlar todo el flujo de la animación desde que inicia hasta que termina
+*/
+
+
+.circle {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    /* Se usa la propiedad animation - que es un short hand, es decir, es la abreviación de varias propiedades
+    */
+    animation-name: changePosition; /* hace referencia a un keyframe -  */
+    animation-duration: 2s; /* para iniciar visualmente la animación*/
+    animation-iteration-count: infinite; /* para repetir la animación (en ciclo)*/
+    animation-direction: alternate; /*cada vez que inicia lo hace con una animación agradable*/
+    animation-fill-mode: both; /*ignora el bg de .circle y pone los del keyframe*/
+    animation-timing-function: linear;
+}
+
+
+
+/*sintaxis -> keyframe nombreAnimación{} - los cuales nos permiten controlar todo el flujo de la animación - se declara como una función sin parametros*/
+@keyframes changeColorBasic {
+    /* tiene selectores dentro, los cuales no llevan nombres, llevan porcentaje o palabras clave */
+    0%{ /*se puede poner from*/
+        background: red;
+    }
+
+    100% { /*se puede poner to*/
+        background: teal;
+    }
+}
+/* Para que una animación funcione tenemor que referencias un keyframe */
+
+@keyframes changeColorall { /*tomando todo el contro de la animación*/
+    0%{ 
+        transform: scale(1);
+    }
+    20%{ 
+        transform: scale(1.3);
+    }
+    40%{ 
+        transform: scale(1.6);
+    }
+    70%{ 
+        transform: scale(1);
+    }
+    90%{ 
+        transform: scale(.5);
+    }
+    100%{ /*si no hay 100% se toma el estado inicial de elemento .circle*/
+        transform: scale(1);
+    }
+}
+/* Las animaciones por defecto solo se ejecutan una sola vez (cuando el navegador carga por completo)
+    - se corrige con animation-iteration-count, la cual define cuantas veces será repetida la animación, por defecto tiene valor de uno hasta N numero, tambien se puede poner el valor de infinite
+*/
+
+@keyframes changePosition { 
+    0%{ 
+        transform: translateX(0);
+        background-color: black;
+    }
+    100%{ 
+        transform: translateX(100%);
+        /* transform: translateX(100%) translateY(100%); */
+        background: green;
+        
+    }
+  
+}
+/* la animación una vez llega al 100% regresa de golpe a su estado inicial, para corregir esto
+    se usa animation-direction, la cual indica de que pundo de la animación debe partir, cuando comienza y cuando termina
+        - normal: sigue el orden de keyframe 0-100%
+        - reverse: inicia al revés de 100%-0
+        - alternate: va de 0-100%-0 no de golp, con una animación
+        - alternate-reverse: lo mismo pero empieza 100%-0-100%
+
+ */
+
+ /*animation function
+ animation-timing-function - define la curva de aceleración de la animación
+    - ease: valor por defecto, aumenta la velocidad hacua la mitad y disminuye al final
+    - ease-in : va aumentando la velocidad desde muy lento hasta el final
+    - ease-in-out: empeiza lentamente, acelera y luego disminuye de nuevo
+    - ease-out (comienza rapidamente y luego disminuye)
+    - linear : velocidad igual al inico y al final
+ */
+
+ .circle:hover {
+    animation-play-state: paused; /*si estas en el valor paused al pasarel mause se detiene la animación
+        - por defecto es runing
+    */
+ }
+
+ 
+
+ .circle2 {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    animation: alternate infinite changeColorall 3s;
+}
+
+.circle3 {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    animation: alternate infinite anima 3s;
+}
+
+@keyframes anima {
+    0%{
+        transform: translate(0);
+        background: crimson;
+    }
+    25%{
+        transform: translate(100%);
+        background: salmon;
+    }
+    50%{                /* eje X y eje Y*/
+        transform: translate(100%, 100%);
+        background: slateblue;
+    }
+    75%{
+        transform: translate(0, 100%);
+        background: salmon;
+    }
+    
+}
