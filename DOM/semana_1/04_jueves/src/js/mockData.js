@@ -68,7 +68,7 @@ let listPets = [
         status: "stable",
         imagen:"https://picsum.photos/200",
         owner: {
-            ownerName: "juan",
+            ownerName: "p",
             phone: 3059052091,
             id: 1036670093,
             email: "jquirama@gmail.com"
@@ -83,7 +83,7 @@ let listPets = [
         status: "stable",
         imagen:"https://picsum.photos/200",
         owner: {
-            ownerName: "juan",
+            ownerName: "l",
             phone: 3059052091,
             id: 1036670093,
             email: "jquirama@gmail.com"
